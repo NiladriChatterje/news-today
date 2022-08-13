@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/blanka');
+@import url('https://fonts.cdnfonts.com/css/blanka');
 
 .Header-body >span{
     font-family: 'blanka',sans-serif;
@@ -23,6 +23,7 @@
     
 }
 .endpoints{
+    margin-top: 10%;
     width: 80vw;
     height:10vh;
     display: flex;
