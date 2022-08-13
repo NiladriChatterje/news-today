@@ -3,7 +3,7 @@ import './App.css';
 import Sidebar from './components/sidebar/sidebar';
 import HeaderBody from './components/HeaderBody/HeaderBody'
 
-const API_KEY='ff914cf93cf5464c9864c28f3e075e41';
+const API_KEY='c8bcc26e4b6e486c8094d5789f4d1dc5';
 
 export default function App(){
     const [text,setText]=React.useState(()=>'num');
@@ -15,7 +15,7 @@ export default function App(){
     const [country,setCountry] =React.useState(()=>'in');
     const [sources,setSources] =React.useState(()=>'bbc-news');
     const [data,setData] = React.useState(()=>[]);
-    const [handleChange,setHandleChange] =React.useState(() => 'bitcoin')
+    const [handleChange,setHandleChange] =React.useState(() => 'movies')
 
 
     React.useEffect(()=>{
@@ -23,23 +23,29 @@ export default function App(){
         try{
         if(type === 'Everything')
         {
-
+            if (text === 'lang'){
+                async function getData(){
+                    setHandleChange('all');
+                    setIsDisable(false);
+                    return await fetch(`https://newsapi.org/v2/everything?q=all&language=${lang}&apiKey=${API_KEY}`)
+                    .then((response) => response.json()).then((data) => setData(data.articles)).catch(err => console.log(err));
+                }
+                getData();
+            }
+            else{
             async function getData(){
                 setIsDisable(false);
-                return await fetch(`https://newsapi.org/v2/everything?q=${handleChange}&language=${lang}&page=${page}&apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/everything?q=${handleChange}&page=${page}&apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => setData(data.articles)).catch(err => console.log(err));
             }
             getData();
 
-        
+            }
         
     
     }
        else if(type === 'Headlines')
-        {   if(text !== 'country' || text !== 'sources' || text !== 'category' )
-                setText('country')
-
-
+        {               
             if(text === 'country' || text === 'category')
            { async function getData(){
                 return await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`)
@@ -54,12 +60,9 @@ export default function App(){
             }
             getData();
         }
-    }
+        }
       else  if(type === 'Sources')
-        {   if(text !== 'country' || text !== 'category' || text !== 'lang' )
-                setText('country')
-
-
+        {   
             if(text === 'country')
             {async function getData(){
                 return await fetch(`https://newsapi.org/v2/top-headlines/sources?country=${country}apiKey=${API_KEY}`)
