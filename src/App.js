@@ -26,7 +26,7 @@ export default function App(){
 
             async function getData(){
                 setIsDisable(false);
-                return await fetch(`http://newsapi.org/v2/everything?q=${handleChange}&language=${lang}&page=${page}&apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/everything?q=${handleChange}&language=${lang}&page=${page}&apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => setData(data.articles)).catch(err => console.log(err));
             }
             getData();
@@ -42,14 +42,14 @@ export default function App(){
 
             if(text === 'country' || text === 'category')
            { async function getData(){
-                return await fetch(`http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => setData(data.articles)).catch(err => console.log(err));
             }
             getData();
         }
         else if(text === 'sources'){
             async function getData(){
-                return await fetch(`http://newsapi.org/v2/top-headlines?sources=${sources}&apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/top-headlines?sources=${sources}&apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => setData(data.articles)).catch(err => console.log(err));
             }
             getData();
@@ -62,21 +62,21 @@ export default function App(){
 
             if(text === 'country')
             {async function getData(){
-                return await fetch(`http://newsapi.org/v2/top-headlines/sources?country=${country}apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/top-headlines/sources?country=${country}apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => {setData(data.articles);console.log(data.articles)}).catch(err => console.log(err));
             }
             getData();
         }
         else if(text === 'category'){
             async function getData(){
-                return await fetch(`http://newsapi.org/v2/top-headlines/sources?category=${category}apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/top-headlines/sources?category=${category}apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => {setData(data.articles);console.log(data.articles)}).catch(err => console.log(err));
             }
             getData();
         }
         else if(text === 'lang'){
             const getData = async function getData(){
-                return await fetch(`http://newsapi.org/v2/top-headlines/sources?language=${lang}apiKey=${API_KEY}`)
+                return await fetch(`https://newsapi.org/v2/top-headlines/sources?language=${lang}apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => {setData(data.articles);console.log(data.articles)}).catch(err => console.log(err));
             }
             getData();
