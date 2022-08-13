@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+*{
+    font-family: sans-serif;
+    width:98vw;
+    height:98vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    overflow: clip;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#Inputfield{
+    position: fixed;
+    width:50px;
+    color: white;
+    font-weight: 900;
+    overflow: hidden;
+    height:50px;
+    transition: all 400ms;
+    right:50px;
+    top:20px;
+    box-shadow: 0 5px 10px -5px;
+    border-radius: 50%;
+    background-color: rgb(99, 46, 99);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#Inputfield > input{
+    outline: none;
+    background-color: rgb(72, 32, 72);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media all and (max-width:1200px){
+    #Inputfield{
+        top:80px;
+        right:5px;
+        height:50px;
+    }
+    
 }

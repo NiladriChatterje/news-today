@@ -1,0 +1,97 @@
+@import url('http://fonts.cdnfonts.com/css/blanka');
+
+.sidebar-container{
+    background-color: rgb(56, 42, 60);
+    width:12vw;
+    height:95vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    z-index: 18;
+    transition-duration: 350ms;
+}
+.options{
+    cursor: pointer;
+    font-family: 'blanka',sans-serif;
+    border: 1px solid white;
+    border-radius: 20px;
+    height:30px;
+    margin-left: 20%;
+    text-align: center;
+    width:120px;
+    transition: all;
+    transition-duration: 350ms;
+}
+.options:hover{
+    color:rgb(70, 49, 70);
+    background-color: white;
+    transform: translate(10px,0);
+}
+.optionList{
+    transition: all 350ms;
+    visibility: hidden;
+    z-index: 2;
+    width:10vw;
+    height:70vh;
+    left: 10%;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px -3px rgb(21, 16, 44);
+    background-color: white;
+    position: absolute;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: clip;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.subOptionList{
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    height: 28px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border-bottom: 2px rgb(74, 45, 74) solid;
+    justify-content: center;
+    align-items: center;
+    width: 9.5vw;
+    font-family: 'blanka',sans-serif;
+    flex-direction: column;
+    transition: all;
+    transition-duration: 300ms;
+    color: black;
+}
+.optionList::-webkit-scrollbar{
+    width:15px;
+    background: white;
+}
+.optionList::-webkit-scrollbar-thumb{
+    border-radius: 50%;
+    background: rgb(103, 48, 103);
+}
+.subOptionList:hover{
+    color: white;
+    margin-left: 5px;
+    background-color: rgb(62, 45, 62);
+}
+
+@media all and (max-width:1200px){
+    .optionList{
+        width:150px
+    }
+    .subOptionList{
+        width:135px;
+    }
+    .options{
+        width:30px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .sidebar-container{
+        width:10vw;
+    }
+}

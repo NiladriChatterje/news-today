@@ -1,0 +1,73 @@
+@import url('http://fonts.cdnfonts.com/css/blanka');
+
+.Header-body >span{
+    font-family: 'blanka',sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    width: 15vw;
+    height:8vh;
+    border-radius: 15px;
+    background-color: rgb(83, 49, 83);
+}
+
+.Header-body{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    width: 80vw;
+    
+}
+.endpoints{
+    width: 80vw;
+    height:10vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.endpoints > span{
+    font-family: 'blanka',sans-serif;
+    background-color: rgb(73, 48, 73);
+    color: white;
+    height:3vh;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 25px;
+    text-align: center;
+    width:100px;
+    transition: all 200ms;
+    
+}
+
+.endpoints>span:hover{
+    width:120px;
+    color: rgb(101, 28, 101);
+    background-color: white;
+    border:1px solid rgb(73, 38, 73);
+}
+
+@media all and (max-width:1200px){
+    .Header-body{
+        justify-content: center;
+        align-items: center;
+        width:80vw;
+        
+    }
+    .Header-body >span{
+        font-size: 1em;
+        width:180px;
+        margin-left: -30px;
+    }
+    .endpoints{
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        margin-left: -30px;
+        
+    }
+
+}
