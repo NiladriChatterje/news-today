@@ -11,13 +11,15 @@ export default function HeaderBody({setType,setIsDisable,data,loading}){
                 <span onClick={()=>{
                     setType('Everything');
                     setIsDisable(false);
+                    document.getElementById('Inputfield').style.borderRadius='15px';
+                    document.getElementById('Inputfield').style.width='300px';
                 }}>Everything</span>
                 <span
                 onClick={()=>{
                     setType('Headlines');
                     setIsDisable(true);
                     document.getElementById('Inputfield').style.borderRadius='50%';
-                    document.getElementById('Inputfield').style.width='50px';
+                    document.getElementById('Inputfield').style.width='30px';
                 }}
                 >Headlines</span>
                 <span
@@ -25,7 +27,7 @@ export default function HeaderBody({setType,setIsDisable,data,loading}){
                     setType('Sources');
                     setIsDisable(true);
                     document.getElementById('Inputfield').style.borderRadius='50%';
-                    document.getElementById('Inputfield').style.width='50px';
+                    document.getElementById('Inputfield').style.width='30px';
                 }}
                 >Sources</span>
             </div>

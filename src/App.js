@@ -26,8 +26,6 @@ export default function App(){
 
             async function getData(){
                 setIsDisable(false);
-                document.getElementById('Inputfield').style.borderRadius='15px';
-                document.getElementById('Inputfield').style.width='300px';
                 return await fetch(`https://newsapi.org/v2/everything?q=${handleChange}&language=${lang}&page=${page}&apiKey=${API_KEY}`)
                 .then((response) => response.json()).then((data) => setData(data.articles)).catch(err => console.log(err));
             }
